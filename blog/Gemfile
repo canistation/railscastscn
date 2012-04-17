@@ -21,6 +21,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'omniauth'
+gem 'omniauth-github'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -35,6 +37,6 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-gem 'linecache19', '0.5.13', :path => "~/.rvm/gems/ruby-1.9.3-p125@rails320/gems/linecache19-0.5.13/"
-gem 'ruby-debug-base19', '0.11.26', :path => "~/.rvm/gems/ruby-1.9.3-p125@rails320/gems/ruby-debug-base19-0.11.26/"
+#gem 'linecache19', '0.5.13', :path => "~/.rvm/gems/ruby-1.9.3-p125@rails320/gems/linecache19-0.5.13/"
+#gem 'ruby-debug-base19', '0.11.26', :path => "~/.rvm/gems/ruby-1.9.3-p125@rails320/gems/ruby-debug-base19-0.11.26/"
 gem 'ruby-debug19', :require => 'ruby-debug'
