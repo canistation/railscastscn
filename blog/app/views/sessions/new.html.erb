@@ -1,9 +1,8 @@
-<h1>Admin Login</h1>
-<%= form_tag sessions_path do -%>
-  <label for="login">Login</label>
-  <%= text_field_tag :login, params[:login] %>
-  <label for="password">Password</label>
-  <%= password_field_tag :password, params[:password] %>
-
-  <%= submit_tag "Login" %>
-<% end %>
+<h1>Authentication Error!</h1>
+<h2>Authentication Provider: </h2>
+<%= flash[:failure_provider] %>
+<h2>Reason: </h2>
+<%= flash[:failure_type] %>
+<h3><%= link_to "try agin", "/auth/#{request.params[:provider]}" %>
+or
+<%= link_to "register", "/auth/identity/register" %></h3>

@@ -1,5 +1,7 @@
-require 'omniauth-github'
+OmniAuth.config.on_failure do |env|
+  [302, {'Location' => "/auth/#{env['omniauth.error.strategy'].name}/failure?message=#{env['omniauth.error.type']}"},["Redirecting..."]]
+end
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :github, 'd9847bfd661eac3893de', '0b3fcab931872897abee4dcbd1720ee657dd1a46'
-  #provider :github, 'd78181e1ec709f32d844', '7fd79b37dd8a4423c5989b6ae6d4fe358af11dc'
+  provider :identity, :fields => [:nickname, :email]#, on_failed_registration: UsersController.action(:new)
 end
