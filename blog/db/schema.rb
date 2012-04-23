@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120423072505) do
+ActiveRecord::Schema.define(:version => 20120423073737) do
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -43,9 +43,11 @@ ActiveRecord::Schema.define(:version => 20120423072505) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "posts_tags", :id => false, :force => true do |t|
-    t.integer "post_id"
-    t.integer "tag_id"
+  create_table "taggings", :force => true do |t|
+    t.integer  "post_id"
+    t.integer  "tag_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "tags", :force => true do |t|
