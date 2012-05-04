@@ -5,6 +5,7 @@ class Post < ActiveRecord::Base
   has_many :comments
   has_many :taggings
   has_many :tags, :through => :taggings
+  has_many :attachments, :as => :attachmentable
 
   scope :tag_with, lambda{|tag_name| joins(:tags).where("tags.name = ?", tag_name)}
   scope :later_than, lambda{|time| joins(:taggings).where("taggings.created_at > ?", time)}
